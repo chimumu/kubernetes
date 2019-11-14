@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    annotations:
+        kubernetes/class: 'nginx'
+    name: mynginxingress
+    namespace: default
+spec:
+   rules: 
+   - host: muqi.com.cn
+     http:
+       paths:
+       - path: /foo
+         backend:
+            serviceName: nginx-service
+            servicePort: 9000
+  
